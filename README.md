@@ -6,7 +6,7 @@ Designed for product teams, strategy leads, and founders who need real customer 
 
 ---
 
-## 🏗 System Architecture
+## 🏗 **System Architecture**
 
 ```text
 [Public Review Sources] (YouTube, HackerNews, Forums)
@@ -31,29 +31,36 @@ Designed for product teams, strategy leads, and founders who need real customer 
 [Executive Briefing Surface]
   ├── Streamlit Binder UI (Responsive anchor navigation, stacked telemetry, micro-surfaces)
   └── Multi-Page ReportLab PDF Engine (Paginated executive audit download)
-✨ Key Features
-Transformer-Grade Sentiment Classification: Evaluates public reviews using RoBERTa fine-tuned on social context, categorizing signal into positive, neutral, and negative metrics.
+```
 
-Substantive Feature Extraction: Identifies concrete product attributes, thermal states, workflow bottlenecks, and pricing grievances using n-gram frequency rather than broad labels.
+---
 
-Anti-Meta Strategic Synthesis: Enforces strict prompt boundaries on Groq LLM inference to ensure turnaround advice addresses the product itself (engineering, onboarding, positioning, and roadmap moats)—excluding internal pipeline noise.
+## ✨ **Key Features**
 
-Editorial Binder Interface: A distraction-free UI featuring smooth tab navigation (#tab-overview, #tab-voice, #tab-findings, #tab-actions) and clear data hierarchy.
+* **Transformer-Grade Sentiment Classification:** Evaluates public reviews using RoBERTa fine-tuned on social context, categorizing signal into positive, neutral, and negative metrics.
+* **Substantive Feature Extraction:** Identifies concrete product attributes, thermal states, workflow bottlenecks, and pricing grievances using n-gram frequency rather than broad labels.
+* **Anti-Meta Strategic Synthesis:** Enforces strict prompt boundaries on Groq LLM inference to ensure turnaround advice addresses the product itself (engineering, onboarding, positioning, and roadmap moats)—excluding internal pipeline noise.
+* **Editorial Binder Interface:** A distraction-free UI featuring smooth tab navigation (`#tab-overview`, `#tab-voice`, `#tab-findings`, `#tab-actions`) and clear data hierarchy.
+* **Automated PDF Audit Generation:** Compiles an executive-ready, multi-page briefing document on the fly using ReportLab with custom typography and clean pagination.
 
-Automated PDF Audit Generation: Compiles an executive-ready, multi-page briefing document on the fly using ReportLab with custom typography and clean pagination.
+---
 
-🚀 Getting Started
-1. Prerequisites
-Python 3.10+
+## 🚀 **Getting Started**
 
-A Groq Cloud API Key (Get one here)
+### **1. Prerequisites**
+* Python 3.10+
+* A Groq Cloud API Key ([Get one here](https://console.groq.com))
+* YouTube Data API v3 Key (via Google Cloud Console)
 
-2. Installation
+---
+
+### **2. Installation**
+
 Clone the repository and set up your virtual environment:
 
-Bash
-git clone [https://github.com/YOUR_USERNAME/product-intelligence-ai.git](https://github.com/YOUR_USERNAME/product-intelligence-ai.git)
-cd product-intelligence-ai
+```bash
+git clone [https://github.com/AadityaSaxena21/Product-Intelligence-AI.git](https://github.com/AadityaSaxena21/Product-Intelligence-AI.git)
+cd Product-Intelligence-AI
 
 # Create and activate virtual environment
 python3 -m venv .venv
@@ -61,22 +68,38 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
-(If you don't have a requirements.txt yet, run pip install streamlit plotly reportlab python-dotenv groq pandas torch transformers scikit-learn and then pip freeze > requirements.txt)
+```
 
-3. Environment Configuration
-Create a .env file in the root directory:
+*(If you do not have a `requirements.txt` file yet, run `pip install streamlit plotly reportlab python-dotenv groq pandas torch transformers scikit-learn google-api-python-client` and generate it with `pip freeze > requirements.txt`)*
 
-Code snippet
+---
+
+### **3. Environment Configuration**
+
+Create a `.env` file in the project root directory:
+
+```env
 GROQ_API_KEY=your_groq_api_key_here
-4. Running the Application
+YOUTUBE_API_KEY=your_youtube_api_key_here
+```
+
+---
+
+### **4. Running the Application**
+
 Launch the Streamlit executive briefing console:
 
-Bash
+```bash
 streamlit run dashboard/dashboard.py
-Enter any target product (e.g., iPhone 15, Linear, Notion) and click Run audit.
+```
 
-📁 Repository Structure
-Plaintext
+Enter any target product (e.g., `iPhone 15`, `Linear`, `Notion`) and click **Run audit**.
+
+---
+
+## 📁 **Repository Structure**
+
+```text
 ├── dashboard/
 │   └── dashboard.py          # Streamlit UI with Binder theme, Plotly charts, and PDF generator
 ├── data/                     # Cached JSON analysis files per audited product
@@ -86,18 +109,23 @@ Plaintext
 ├── scraper/                  # Multi-source web scrapers (YouTube, HackerNews, etc.)
 ├── main.py                   # Central pipeline orchestration script
 ├── .gitignore                # Environment, build, and bytecode exclusions
-├── README.md
-└── requirements.txt
-📄 Output Artifacts
+├── README.md                 # Project documentation
+└── requirements.txt          # Production dependencies
+```
+
+---
+
+## 📄 **Output Artifacts**
+
 Running an audit generates two persisted assets for each analyzed entity:
 
-data/<product>_analysis.json: Raw telemetry, sentiment distribution, and structured JSON LLM dossier.
+* `data/<product>_analysis.json`: Raw telemetry, sentiment distribution, and structured JSON LLM dossier.
+* `reports/<product>_product_report.txt`: Formatted plain-text intelligence dossier.
+* **Downloadable Executive Briefing (PDF):** High-fidelity executive memo generated directly from the dashboard.
 
-reports/<product>_product_report.txt: Formatted plain-text intelligence dossier.
+---
 
-Live Downloadable PDF: High-fidelity executive memo generated directly from the dashboard.
+## 🛡 **Security & Privacy**
 
-🛡 Security & Privacy
-Sensitive credentials (.env) and local cache folders are ignored by Git.
-
-Pipeline execution strips external platform metadata to focus reports strictly on product engineering and market positioning.
+* Sensitive credentials (`.env`) and local cache folders are ignored by Git.
+* Pipeline execution strips external platform metadata to focus reports strictly on product engineering, positioning, and user experience.
