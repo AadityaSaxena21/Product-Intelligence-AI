@@ -51,7 +51,19 @@ Designed for product teams, strategy leads, and founders who need real customer 
 * Python 3.10+
 * A Groq Cloud API Key ([Get one here](https://console.groq.com))
 * YouTube Data API v3 Key (via Google Cloud Console)
+* MongoDB Instance (Local MongoDB or [MongoDB Atlas](https://www.mongodb.com/atlas))
 
+---
+
+### **3. Environment Configuration**
+
+Create a `.env` file in the project root directory:
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
+YOUTUBE_API_KEY=your_youtube_api_key_here
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/product_intelligence?retryWrites=true&w=majority
+```
 ---
 
 ### **2. Installation**
@@ -81,6 +93,7 @@ Create a `.env` file in the project root directory:
 ```env
 GROQ_API_KEY=your_groq_api_key_here
 YOUTUBE_API_KEY=your_youtube_api_key_here
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/product_intelligence?retryWrites=true&w=majority
 ```
 
 ---
