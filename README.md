@@ -9,7 +9,7 @@ Designed for product teams, strategy leads, and founders who need real customer 
 ## 🏗 **System Architecture**
 
 ```text
-[Public Review Sources] (YouTube, HackerNews, Forums)
+[Public Review Sources] (YouTube, HackerNews, Forums, TrustPilot)
            │
            ▼
 [Ingestion & Deduplication] (Normalization + MD5 Fingerprinting)
