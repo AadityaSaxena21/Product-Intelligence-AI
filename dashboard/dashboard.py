@@ -11,7 +11,7 @@ from reportlab.lib.colors import Color
 from reportlab.pdfgen import canvas
 
 st.set_page_config(
-    page_title="Product Intelligence Briefing",
+    page_title="Product Intelligence AI",
     page_icon="📋",
     layout="wide",
     initial_sidebar_state="collapsed"
