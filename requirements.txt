@@ -12,8 +12,6 @@ pymongo
 reportlab
 keybert
 bertopic
-langchain
-crewai
 groq
 scikit-learn
 webdriver-manager
