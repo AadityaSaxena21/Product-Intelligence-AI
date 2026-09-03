@@ -16,4 +16,4 @@ langchain
 crewai
 groq
 scikit-learn
-webdriver-package
+webdriver-manager
